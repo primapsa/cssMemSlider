@@ -12,11 +12,11 @@ body {
   padding: 1rem;
   margin: 0 auto;
 }
-.slider { 
+.slider {
   display: grid;
   grid-template-columns: repeat(4, 1fr) repeat(4, 1.5rem);
-  grid-template-rows: 1fr 1rem;
-  row-gap: 1.1rem;  
+  grid-template-rows: 1fr 3rem;
+  row-gap: 1.1rem;
   overflow: hidden;
 }
 .carousel {
@@ -27,16 +27,15 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   margin: 0%;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 .carousel__img {
-    display: block;
+  display: block;
   width: 100%;
-
 }
 .additional {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
   display: flex;
@@ -45,14 +44,16 @@ body {
 .additional__text {
   flex-grow: 1;
   flex-shrink: 0;
-  margin: 0;
+  margin-left: 0%;
   width: 100%;
   color: white;
+  transition: all .3s linear;
 }
-.slider__input, .slider__label {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
+.slider__input,
+.slider__label {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 .slider__input {
   grid-column-start: 6;
   grid-column-end: span 1;
@@ -77,20 +78,27 @@ body {
   grid-column-start: 9;
   grid-column-end: span 1;
 }
-.input1:checked ~.carousel  {
+.input1:checked ~ .carousel {
+  margin-left: 0%;
+}
+.input1:checked ~ .additional > .additional__text:first-child  {
     margin-left: 0%;
+  }
+.input2:checked ~ .carousel {
+  margin-left: -100%;
 }
-
-.input2:checked ~.carousel {
-    margin-left: -100%; 
-    
+.input2:checked ~ .additional > .additional__text:first-child   {
+    margin-left: -100%;
+  }
+.input3:checked ~ .carousel {
+  margin-left: -200%;
 }
-.input3:checked ~.carousel  {
+.input3:checked ~ .additional  > .additional__text:first-child {
     margin-left: -200%;
-    
+  }
+.input4:checked ~ .carousel {
+  margin-left: -300%;
 }
-
-.input4:checked ~.carousel {
+.input4:checked ~ .additional > .additional__text:first-child  {
     margin-left: -300%;
-   
-}
+  }
