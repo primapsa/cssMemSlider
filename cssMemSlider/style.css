@@ -1,5 +1,5 @@
 body {
-  font-size: large; /*18*/
+  font-size: large; 
   margin: 0;
 }
 .wrapper {
@@ -8,15 +8,17 @@ body {
   background-color: #25282a;
 }
 .container {
-  width: 45rem;
-  padding: 1rem;
+  width: 50%; 
+  height: 100%; 
+  padding-top: 5%; 
+  box-sizing: border-box;
   margin: 0 auto;
 }
 .slider {
   display: grid;
   grid-template-columns: repeat(4, 1fr) repeat(5, 2rem);
-  grid-template-rows: 1fr 2rem;
-  row-gap: 1.1rem;  
+  grid-template-rows: 1fr 3rem;
+  row-gap: 1%;  
   overflow: hidden;
 }
 .carousel {
@@ -62,7 +64,7 @@ body {
     opacity: 0;
     width: 2rem;
     height: 2rem;
-    /* outline: 1px solid red; */
+    margin: 0;
   grid-column-start: 6;
   grid-column-end: span 1;
 }
@@ -137,3 +139,78 @@ body {
    
     background-color: transparent;
 }
+
+@media (max-width: 1200px) { 
+    .container {
+        width: 60%;
+    }
+}
+@media (max-width: 1000px) { 
+    .container {
+        width: 70%;
+    }
+}
+@media (max-width: 767px) { 
+    .container {
+        width: 100%;
+        padding: 5%;
+    }
+    body {
+        font-size: medium;
+    }
+    .slider {  
+      grid-template-columns: 1fr repeat(4, 2rem) 1fr;
+      grid-template-rows: 1fr 3rem 3rem;     
+    }
+    .additional {     
+      grid-row-start: 3;
+      grid-row-end: 4;    
+    }
+    .input1,
+.label1 {
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+.input2,
+.label2 {
+  grid-column-start: 3;
+  grid-column-end: span 1;
+}
+.input3,
+.label3 {
+  grid-column-start: 4;
+  grid-column-end: span 1;
+}
+.input4,
+.label4 {
+    
+  grid-column-start: 5;
+  grid-column-end: span 1;
+}
+}
+@media (max-width: 480px) { 
+
+  .slider__label{
+ width: .5rem;
+ height: .5rem;
+   }
+
+   .slider {   
+    grid-template-rows: 1fr 2rem 2rem;
+    row-gap: 1%;  
+    overflow: hidden;
+  }
+
+}
+@media (max-width: 480px) { 
+  .slider__label{
+    width: .5rem;
+    height: .5rem;
+    border: .1rem solid #71ABFF;
+      
+}
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
