@@ -131,6 +131,10 @@ body {
   border-color: antiquewhite;
   background-color: antiquewhite;
 }
+.slider__input:hover:active + .slider__label {
+  border-color: #71abff;
+ 
+}
 .slider__input:checked:hover + .slider__label {
   background-color: transparent;
 }
